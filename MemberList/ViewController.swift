@@ -36,8 +36,10 @@ class ViewController: UIViewController {
     // 4. row 이용해서 리스트속 해당 밸류 remove, .
     // 5. 삭제가 완료되면 reloadData
     // 6. 최종 완료
-    
     // 20알 오전까지 진행
+    
+    // 고객 정보 디테일 창 띄우기
+    // 
     
     var name: String = ""
     var contact: String = ""
@@ -51,7 +53,6 @@ class ViewController: UIViewController {
         // table veiw 설정
         userInfoTableView.dataSource = self
         userInfoTableView.delegate = self
-        
         
         self.userInfoTableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
 
@@ -105,8 +106,6 @@ extension ViewController: UITableViewDataSource {
         
         
         cell.nameLabel.text = self.userInfoList[indexPath.row][0]
-        cell.contactLabel.text = self.userInfoList[indexPath.row][1]
-        cell.memoLabel.text = self.userInfoList[indexPath.row][2]
                 
         return cell    // 리턴에 임시로 선언
     }
@@ -114,6 +113,36 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     
-    
-    
+    // 테이블 뷰 정보의 셀 하나를 슬라이드 방식으로 삭제
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//
+//        if editingStyle == .delete {
+//            userInfoList.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//        }
+//    }
+
+//
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //var userDetailList: [String] = []
+        //userDetailList.name = userInfoList
+        
+        print("NavigationView 전환")
+        
+        // navigation controller를 이용하여 화면 전환
+        guard let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController")
+                as? SecondViewController else { return }
+        // .data, .text, .message 로 데이터 담아보기
+        //secondViewController.nam
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+        
+        // 변수에 값 담고
+        // push
+        // SVC 변수 선언해서 받고 보여주고
+//        userInfoList.remove(at: indexPath.row)
+//        userInfoTableView.deleteRows(at: [indexPath], with: .middle)
+    }
+
 }
