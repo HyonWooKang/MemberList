@@ -43,13 +43,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E419FE8E2901322E00B88F16 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		E48A00E728FE9D610067A767 = {
 			isa = PBXGroup;
 			children = (
@@ -69,7 +62,6 @@
 		E48A00F228FE9D610067A767 /* MemberList */ = {
 			isa = PBXGroup;
 			children = (
-				E419FE8E2901322E00B88F16 /* New Group */,
 				E48A010728FFF3E80067A767 /* UserCell */,
 				E48A00F328FE9D610067A767 /* AppDelegate.swift */,
 				E48A00F528FE9D610067A767 /* SceneDelegate.swift */,

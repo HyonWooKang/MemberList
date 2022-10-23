@@ -62,6 +62,13 @@ class ViewController: UIViewController {
     
     @IBAction func openAddView(_ sender: Any) {
         //addUser.isHidden = false
+        
+        // navigation controller를 이용하여 화면 전환
+//        guard let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController")
+//                as? SecondViewController else { return }
+//        // .data, .text, .message 로 데이터 담아보기
+//        secondViewController.
+//        self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     
     @IBAction func addConfirm(_ sender: Any) {
@@ -112,8 +119,12 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-    
-    // 테이블 뷰 정보의 셀 하나를 슬라이드 방식으로 삭제
+
+    // 테이블 뷰의 셀 하나를 터치 방식으로 삭제
+//        userInfoList.remove(at: indexPath.row)
+//        userInfoTableView.deleteRows(at: [indexPath], with: .middle)
+
+    // 테이블 뷰의 셀 하나를 슬라이드 방식으로 삭제
 //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 //
 //        if editingStyle == .delete {
@@ -123,26 +134,20 @@ extension ViewController: UITableViewDelegate {
 //        }
 //    }
 
-//
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //var userDetailList: [String] = []
-        //userDetailList.name = userInfoList
-        
         print("NavigationView 전환")
         
         // navigation controller를 이용하여 화면 전환
         guard let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController")
                 as? SecondViewController else { return }
-        // .data, .text, .message 로 데이터 담아보기
-        //secondViewController.nam
-        self.navigationController?.pushViewController(secondViewController, animated: true)
         
-        // 변수에 값 담고
-        // push
-        // SVC 변수 선언해서 받고 보여주고
-//        userInfoList.remove(at: indexPath.row)
-//        userInfoTableView.deleteRows(at: [indexPath], with: .middle)
+        // 데이터 담기
+        secondViewController.userName = self.userName.text ?? "<no_name>" // https://stackoverflow.com/questions/56435408/
+        secondViewController.userContact = self.userContact.text ?? "<no_contact>"
+        secondViewController.userMemo = self.userMemo.text ?? "<no_memo>"
+        
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+            
     }
 
 }

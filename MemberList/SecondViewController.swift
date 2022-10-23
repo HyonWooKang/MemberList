@@ -13,10 +13,17 @@ class SecondViewController: UIViewController {
     @IBOutlet var userContactLabel: UILabel!
     @IBOutlet var userMemoLabel: UILabel!
     
+    var userName: String = ""
+    var userContact: String = ""
+    var userMemo: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 유저 값 담기
+        userNameLabel.text = self.userName
+        userContactLabel.text = self.userContact
+        userMemoLabel.text = self.userMemo
     }
     
     @IBAction func moveBack(_ sender: UIButton) {
