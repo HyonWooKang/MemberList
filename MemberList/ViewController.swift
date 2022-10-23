@@ -25,21 +25,9 @@ class ViewController: UIViewController {
     
     
 //    [[], [], []]
-    // 1. 2차 배열
+    // 1. 2차 배열 -> 해당 방법으로 진행
     // 2. 1차 배열을 3개를 만든다.
     // 3. 1차 배열 안에 구조체를 넣는다.
-    
-    // 삭제 순서
-    // 1. 사용자 지우고 싶은 row를 터치
-    // 2. row 자리를 받아야겠다. ex indexPat.row, section, 터치좌표
-    // 3. row 자리를 확인했다.
-    // 4. row 이용해서 리스트속 해당 밸류 remove, .
-    // 5. 삭제가 완료되면 reloadData
-    // 6. 최종 완료
-    // 20알 오전까지 진행
-    
-    // 고객 정보 디테일 창 띄우기
-    // 
     
     var name: String = ""
     var contact: String = ""
